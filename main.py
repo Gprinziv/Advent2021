@@ -1,5 +1,5 @@
-with open("instructions") as file:
-  moves = [line.strip().split(" ") for line in file.readlines()]
+with open("diagnostic") as file:
+  binaries = [line.strip() for line in file.readlines()]
 
 #region Part 1
 #endregion
