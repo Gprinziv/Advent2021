@@ -1,10 +1,8 @@
-with open("test") as file:
+with open("input") as file:
   lanternfish = [int(x) for x in file.read().split(",")]
 
-days = 0
-limit = 256
+days, limit = 0, 256
 lanMap = {i:0 for i in range(9)}
-print(lanMap)
 for fish in lanternfish:
   lanMap[fish] += 1
 while days <= limit:
