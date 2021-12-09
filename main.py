@@ -1,2 +1,2 @@
 with open("input") as file:
-  temp = file.readlines()
+  heightmap = [line.strip() for line in file.readlines()]
