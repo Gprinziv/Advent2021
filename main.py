@@ -1,2 +1,2 @@
-with open("input") as file:
-  someList = [int(x) for x in file.read().split(",")]
+with open("test") as file:
+  navigation = [x.strip() for x in file.readlines()]
