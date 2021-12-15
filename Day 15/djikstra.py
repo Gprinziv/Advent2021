@@ -9,7 +9,7 @@ def getAdjacent(point, end):
     if 0 <= x <= end[0] and 0 <= y <= end[1]:
       yield x, y
 
-with open("test2") as file:
+with open("Day 15\input") as file:
   raw = [[int(x) for x in line.strip()] for line in file.readlines()]
 
 #region part 2 modifier
