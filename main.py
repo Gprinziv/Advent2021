@@ -9,8 +9,9 @@ def getAdjacent(point, end):
     if 0 <= x <= end[0] and 0 <= y <= end[1]:
       yield x, y
 
-with open("input") as file:
+with open("test2") as file:
   raw = [[int(x) for x in line.strip()] for line in file.readlines()]
+
 #region part 2 modifier
 maxX = len(raw[0])
 maxY = len(raw)
@@ -25,11 +26,11 @@ for i in range(1, 5):
 
 distances = defaultdict(lambda: float('inf'), {(0,0):0})
 end = (len(raw[0]) - 1, len(raw) - 1)
-toSearch = [((0,0), 0)]
+toSearch = [(0, (0,0))]
 visited = set()
 
 while toSearch:
-  node, distance = heapq.heappop(toSearch)
+  distance, node = heapq.heappop(toSearch)
   if node == end:
     print("finished! Distance is " + str(distance))
     break
@@ -43,4 +44,4 @@ while toSearch:
     newdist = distance + raw[y][x]
     if newdist < distances[point]:
       distances[point] = newdist
-      heapq.heappush(toSearch, (point, newdist))
+      heapq.heappush(toSearch, (newdist, point))
