@@ -1,35 +1,21 @@
-def literal(packet):
-  cur, number = 0, ""
-  while packet[cur] == '1':
-    number += packet[cur+1:cur+5]
-    cur += 5
-  number += packet[cur+1:cur+5]
-  print("Literal contents: " + number)
-  print("As an integer: " + str(int(number, 2)))
-  return number
-
-def operator(packet):
-  return
-
-def idpacket(packet):
-  return
-
 with open("test") as file:
-  bits = bin(int(file.read(), 16))[2:]
+  raw = file.read().replace("..", '=').replace(": ", "=").replace(", ", "=").split("=")
+  minX, maxX, minY = int(raw[2]), int(raw[3]), int(raw[5])
+maxY = -(minY + 1)
 
-toProcess = [bits]
-versions = []
+print(raw)
+x = 0
+while not minX <= sum(range(x + 1)) <= maxX:
+    x+=1
 
-while toProcess:
-  packet = toProcess.pop(0)
-  ver = int(packet[:3], 2)
-  versions.append(vid)
-  tid = int(packet[3:6], 2)
-  lid = packet[6]
-  print(tid)
-  if tid == 4:
-    literal(packet[6:])
-  elif lid == '1':
-    pass
-  else:
-    pass
+possibleX = []
+for posX in range(x, maxX + 1):
+    i = 0:
+    while i < 
+
+print("Minimum X velocity: " + str(x))
+print("Maximim X velocity: " + str(maxX))
+print("Minimum Y velocity: " + str(minY))
+print("Maximim Y velocity: " + str(maxY))
+
+print("Highest possible Y value: " + str(sum(range(maxY + 1))))
