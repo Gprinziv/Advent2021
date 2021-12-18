@@ -1,2 +1,2 @@
 with open("test") as file:
-  raw = file.read()
+  raw = [x.strip() for x in file.readlines()]
